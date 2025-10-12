@@ -1,0 +1,55 @@
+HW2 — Evaluating Lab Works Using AI Models
+
+Goal:
+The goal of this work was to create a simple bot that evaluates laboratory works using large language models (LLMs) through Hugging Face or OpenRouter. The bot analyzes the text of a student's report and provides a qualitative assessment based on four criteria.
+
+Test Setup:
+Three local models were tested without API tokens (free mode):
+1. distilgpt2 — small, fast model
+2. microsoft/phi-1_5 — larger, high-quality model
+3. EleutherAI/gpt-neo-125M — medium model
+
+Temperature: 0.7  
+Prompt role: "Teacher evaluating student lab work"
+
+
+ MODEL 1: distilgpt2
+
+- Output was repetitive (“each student will have a positive/negative score of 100”).
+- Text generation cut off mid-sentence.
+- No real evaluation was given.
+ Strengths: quick response, no errors.
+ Weaknesses: incoherent, short, repetitive.
+
+ MODEL 2: microsoft/phi-1_5
+
+- Produced the most meaningful response.
+- The model evaluated criteria clearly:
+  - Code quality: above average
+  - Documentation: good but can be improved
+  - Structure: well formatted
+- Gave constructive feedback and a logical final grade.
+✅ Strengths: coherent, structured output.
+❌ Weaknesses: shorter explanation could be expanded.
+
+MODEL 3: EleutherAI/gpt-neo-125M
+
+- Repeated “LAB SPECIFICATIONS…” lines.
+- Did not complete sentences properly.
+- Output partially repeated the question.
+ Strengths: friendly tone, readable.
+ Weaknesses: incomplete reasoning, repetition.
+
+ Conclusion
+
+Best model: **microsoft/phi-1_5**  
+Best prompt: *"You are a strict but constructive teacher."*  
+Best temperature: **0.7**
+
+Summary:
+- distilgpt2 → too small, nonsensical output  
+- gpt-neo-125M → partially coherent, repetitive  
+- phi-1_5 → clear, meaningful, most accurate teacher-like response  
+
+Overall conclusion:
+The microsoft/phi-1_5 model provides the best balance between speed, accuracy, and coherence when analyzing student lab works. It successfully met the requirements of the HW2 task.
